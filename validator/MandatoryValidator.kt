@@ -49,7 +49,6 @@ class MandatoryValidator {
                 if (!TextUtils.isEmpty(tv.text)) {
                     if (req.maxChar != 0) {
                         if (tv.text.length > req.maxChar) {
-                            println("fire listener more max")
                             listener?.didFailValidated(tv, req.alertMessage)
                             return
                         }
@@ -57,11 +56,13 @@ class MandatoryValidator {
                 }
             }
         }
+        listener?.didSuccess()
     }
 }
 
 interface OnValidateFailed {
     fun didFailValidated(textView: TextView, alertMessage: String)
+    fun didSuccess()
 }
 
 class Requirement(val type: Int, val alertMessage: String, val maxChar: Int = 0, val placeholder: String = "")
