@@ -24,5 +24,12 @@ val validator = MandatoryValidator()
                     override fun didFailValidated(textView: TextView, alertMessage: String) {
                         showError(alertMessage)
                     }
+                    
+                    override fun didSuccess() {
+                        //TODO: Success action
+                    }
                 })
+                
+//run validation
+validator.validate()
 ```
