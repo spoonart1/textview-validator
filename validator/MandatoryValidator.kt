@@ -1,5 +1,3 @@
-package com.siab.mobile.base.artbase.utility
-
 import android.text.TextUtils
 import android.widget.TextView
 
